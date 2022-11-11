@@ -1,0 +1,144 @@
+@import url(./normalize.css);
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
+:root {
+  --cyan: hsl(179, 62%, 43%);
+  --cyan-accent: hsla(179, 62%, 43%, 0.6);
+  --yellow: hsl(71, 73%, 54%);
+  --gray: hsl(204, 43%, 93%);
+  --gray-alpha: hsla(204, 43%, 93%, 0.6);
+  --blue: hsl(218, 22%, 67%);
+  --blue-alpha: hsla(218, 22%, 67%, 0.6);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Karla", sans-serif;
+  line-height: 1.75rem;
+  background-color: var(--gray);
+}
+
+li {
+  line-height: 1.5rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+h1,
+h2 {
+  font-weight: 700;
+}
+
+button {
+  width: 100%;
+  border: none;
+  margin-top: 1.75rem;
+  border-radius: 0.5rem;
+  font-family: "Karla", sans-serif;
+  font-size: 1rem;
+  color: white;
+  background-color: var(--yellow);
+  padding: 1rem 0;
+  text-decoration: none;
+  box-shadow: 0 0.25rem 2rem #00000050;
+}
+
+button:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.one > h1 {
+  color: var(--cyan);
+}
+
+.one > h2 {
+  color: var(--yellow);
+}
+
+.card {
+  display: grid;
+  grid-template-areas: "one one" "two three";
+  grid-auto-columns: 1fr;
+  max-width: 42rem;
+  box-shadow: 0 1rem 2rem 0 var(--blue-alpha);
+  border-radius: 1rem;
+}
+
+.one {
+  grid-area: one;
+  color: var(--blue);
+  background-color: white;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.two {
+  grid-area: two;
+  background-color: var(--cyan);
+  border-radius: 0 0 0 1rem;
+}
+
+.three {
+  grid-area: three;
+  background-color: var(--cyan-accent);
+  border-radius: 0 0 1rem 0;
+}
+
+.one,
+.two,
+.three {
+  padding: 3rem;
+}
+
+.two,
+.three {
+  color: var(--gray);
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0 1rem;
+}
+
+.price > p:first-child {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-right: 1rem;
+}
+
+.price > p:last-child {
+  color: var(--gray-alpha);
+}
+
+@media (max-width: 44rem) {
+  .card {
+    grid-template-areas: "one" "two" "three";
+    max-width: 24rem;
+  }
+
+  .two {
+    border-radius: 0;
+  }
+
+  .three {
+    border-radius: 0 0 1rem 1rem;
+  }
+
+  .one,
+  .two,
+  .three {
+    padding: 2rem;
+  }
+}
